@@ -1,0 +1,192 @@
+@import "_colors.scss";
+
+* {
+  margin: 0;
+  padding: 0;
+  color: $White;
+  font-family: "JetBrains Mono", serif;
+}
+
+.mainContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: $Grey950;
+  height: 100vh;
+}
+
+.secondContainer {
+  width: 26rem;
+  height: auto;
+}
+
+.headingName {
+  text-align: center;
+  font-size: 1.2rem;
+  letter-spacing: 1px;
+  color: $Grey700;
+  margin-bottom: 1.5rem;
+}
+
+.passwordGen {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  height: 3.5rem;
+  padding: 0 1.5rem 0 1.5rem;
+  background-color: $Grey800;
+  margin-bottom: 1rem;
+}
+
+.copyIconImage {
+  width: 1rem;
+  height: 1.2rem;
+}
+
+.generatedPassword {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: $Grey700;
+}
+
+.passwordSelectorContainer {
+  background-color: $Grey800;
+  height: 25rem;
+}
+
+.cLength {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 1.5rem 0 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.cLengthTitle {
+  color: $Grey200;
+  font-size: 0.9rem;
+}
+
+.cLengthNumber {
+  font-size: 1.3rem;
+  color: $Green200;
+}
+
+.slidecontainer {
+  width: auto;
+  height: 2rem;
+  padding: 0 1.5rem 0 1.5rem;
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.slider {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 5px;
+  background: $Grey850;
+  //   outline: none; /* Remove outline */
+  //   opacity: 0.7; /* Set transparency (for mouse-over effects on hover) */
+  -webkit-transition: 0.2s;
+  transition: opacity 0.2s;
+}
+
+.slider:hover {
+  opacity: 1;
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  background: $Grey200;
+  cursor: pointer;
+  border-radius: 50%;
+}
+
+.slider::-moz-range-thumb {
+  width: 25px;
+  height: 25px;
+  background: #04aa6d;
+  cursor: pointer;
+}
+
+.instructions {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 0 1.5rem 0 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.input {
+  outline: 1.5px solid $White;
+  appearance: none;
+  width: 12px;
+  height: 12px;
+}
+
+.label {
+  font-size: 13px;
+}
+
+.checkboxes {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.buttons {
+  height: auto;
+  padding: 0 1.5rem 0 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.strength {
+  display: flex;
+  justify-content: space-between;
+  height: 0.5rem;
+  align-items: center;
+  background: $Grey850;
+  padding: 1.5rem;
+}
+
+.levels {
+  display: flex;
+  gap: 10px;
+}
+
+.levelsDiv {
+  outline: 1.5px solid $White;
+  width: 5px;
+  height: 20px;
+}
+
+.generateButton {
+  width: 100%;
+  height: 3rem;
+  background-color: $Green200;
+  border: none;
+}
+
+.generateButtonTitle {
+  font-size: 1rem;
+  color: $Grey850;
+  font-weight: 600;
+}
+
+.rightArrow {
+  width: 0.6rem;
+  padding-left: 0.5rem;
+}
+
+.strengthTitle {
+  font-size: 14px;
+  color: $Grey600;
+}

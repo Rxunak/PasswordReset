@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+      rel="stylesheet"
+    />
+
+    <title>Frontend Mentor | Password generator app</title>
+  </head>
+  <body>
+    <main class="mainContainer">
+      <section class="secondContainer">
+        <h1 class="headingName">Password Generator</h1>
+        <div class="passwordGen">
+          <p class="generatedPassword">P4$5W0rd!</p>
+          <img
+            src="assets/images/icon-copy.svg"
+            alt="copyIcon"
+            class="copyIconImage"
+          />
+        </div>
+        <div class="passwordSelectorContainer">
+          <div class="cLength">
+            <p class="cLengthTitle">Character Length</p>
+            <p class="cLengthNumber" id="passwordLength">10</p>
+          </div>
+          <div class="slidecontainer">
+            <input
+              type="range"
+              min="0"
+              max="10"
+              value="50"
+              class="slider"
+              id="myRange"
+            />
+          </div>
+          <div class="instructions">
+            <div class="checkboxes">
+              <input
+                type="checkbox"
+                id="uppercase"
+                name="uppercase"
+                class="input"
+              />
+              <label for="checkbox" class="label"
+                >Include Uppercase Letters</label
+              ><br />
+            </div>
+            <div class="checkboxes">
+              <input
+                type="checkbox"
+                id="lowercase"
+                name="lowercase"
+                class="input"
+              />
+              <label for="lowercase" class="label">
+                Include Lowercase Letters</label
+              ><br />
+            </div>
+            <div class="checkboxes">
+              <input
+                type="checkbox"
+                id="numbers"
+                name="numbers"
+                class="input"
+              />
+              <label for="numbers" class="label"> Include Numbers</label><br />
+            </div>
+            <div class="checkboxes">
+              <input
+                type="checkbox"
+                id="symbols"
+                name="symbols"
+                class="input"
+              />
+              <label for="symbols" class="label"> Include Symbols</label><br />
+            </div>
+          </div>
+          <div class="buttons">
+            <div class="strength">
+              <p class="strengthTitle">STRENGTH</p>
+              <div class="levels">
+                <div class="levelsDiv"></div>
+                <div class="levelsDiv"></div>
+                <div class="levelsDiv"></div>
+                <div class="levelsDiv"></div>
+              </div>
+            </div>
+            <button class="generateButton">
+              <p class="generateButtonTitle">
+                GENERATE
+                <span
+                  ><img
+                    src="assets/images/icon-arrow-right.svg"
+                    alt="rightArrow"
+                    class="rightArrow"
+                /></span>
+              </p>
+            </button>
+          </div>
+        </div>
+      </section>
+    </main>
+    <script src="index.js"></script>
+  </body>
+</html>
