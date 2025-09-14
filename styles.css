@@ -71,6 +71,11 @@
   color: #a4ffaf;
 }
 
+.active::-webkit-slider-thumb {
+  outline: 2px solid #a4ffaf;
+  background: #000000 !important;
+}
+
 .slidecontainer {
   width: auto;
   height: 2rem;
@@ -85,30 +90,32 @@
   -moz-appearance: none;
        appearance: none;
   width: 100%;
-  height: 5px;
+  cursor: pointer;
+  outline: none;
+  height: 8px;
   background: #18171f;
-  transition: opacity 0.2s;
-}
-
-.slider:hover {
-  opacity: 1;
 }
 
 .slider::-webkit-slider-thumb {
   -webkit-appearance: none;
   appearance: none;
-  width: 20px;
   height: 20px;
-  background: #e6e5ea;
-  cursor: pointer;
+  width: 20px;
+  background-color: #e6e5ea;
   border-radius: 50%;
+  border: none;
+  -webkit-transition: 0.2s ease-in-out;
+  transition: 0.2s ease-in-out;
 }
 
 .slider::-moz-range-thumb {
-  width: 25px;
-  height: 25px;
-  background: #04aa6d;
-  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  background-color: #a4ffaf;
+  border-radius: 50%;
+  border: none;
+  -moz-transition: 0.2s ease-in-out;
+  transition: 0.2s ease-in-out;
 }
 
 .instructions {
@@ -117,19 +124,6 @@
   gap: 10px;
   padding: 0 1.5rem 0 1.5rem;
   margin-bottom: 1rem;
-}
-
-.input {
-  outline: 1.5px solid #ffffff;
-  -webkit-appearance: none;
-     -moz-appearance: none;
-          appearance: none;
-  width: 12px;
-  height: 12px;
-}
-
-.label {
-  font-size: 13px;
 }
 
 .checkboxes {
@@ -187,4 +181,48 @@
 .strengthTitle {
   font-size: 14px;
   color: #817d92;
+}
+
+.label {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  cursor: pointer;
+  font-size: 13px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+}
+
+.label input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 12px;
+  width: 12px;
+  background-color: #14131b;
+  outline: 1px solid #e6e5ea;
+}
+
+.label input:checked ~ .checkmark {
+  background-color: #a4ffaf;
+  outline: none;
+}
+
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+.label input:checked ~ .checkmark:after {
+  display: block;
 }/*# sourceMappingURL=styles.css.map */

@@ -73,6 +73,11 @@
   color: $Green200;
 }
 
+.active::-webkit-slider-thumb {
+  outline: 2px solid $Green200;
+  background: $Black !important;
+}
+
 .slidecontainer {
   width: auto;
   height: 2rem;
@@ -86,33 +91,30 @@
   -webkit-appearance: none;
   appearance: none;
   width: 100%;
-  height: 5px;
+  cursor: pointer;
+  outline: none;
+  height: 8px;
   background: $Grey850;
-  //   outline: none; /* Remove outline */
-  //   opacity: 0.7; /* Set transparency (for mouse-over effects on hover) */
-  -webkit-transition: 0.2s;
-  transition: opacity 0.2s;
-}
-
-.slider:hover {
-  opacity: 1;
 }
 
 .slider::-webkit-slider-thumb {
   -webkit-appearance: none;
   appearance: none;
-  width: 20px;
   height: 20px;
-  background: $Grey200;
-  cursor: pointer;
+  width: 20px;
+  background-color: $Grey200;
   border-radius: 50%;
+  border: none;
+  transition: 0.2s ease-in-out;
 }
 
 .slider::-moz-range-thumb {
-  width: 25px;
-  height: 25px;
-  background: #04aa6d;
-  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  background-color: $Green200;
+  border-radius: 50%;
+  border: none;
+  transition: 0.2s ease-in-out;
 }
 
 .instructions {
@@ -123,16 +125,16 @@
   margin-bottom: 1rem;
 }
 
-.input {
-  outline: 1.5px solid $White;
-  appearance: none;
-  width: 12px;
-  height: 12px;
-}
+// .input {
+//   outline: 1.5px solid $White;
+//   appearance: none;
+//   width: 12px;
+//   height: 12px;
+// }
 
-.label {
-  font-size: 13px;
-}
+// .label {
+//   font-size: 13px;
+// }
 
 .checkboxes {
   display: flex;
@@ -189,4 +191,51 @@
 .strengthTitle {
   font-size: 14px;
   color: $Grey600;
+}
+
+.label {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  //   margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 13px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  //   outline: 2px solid brown;
+}
+
+.label input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 12px;
+  width: 12px;
+  background-color: $Grey900;
+  outline: 1px solid $Grey200;
+}
+
+.label input:checked ~ .checkmark {
+  background-color: $Green200;
+  outline: none;
+}
+
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+.label input:checked ~ .checkmark:after {
+  display: block;
 }
