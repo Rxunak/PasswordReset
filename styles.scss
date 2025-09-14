@@ -219,10 +219,14 @@
   position: absolute;
   top: 0;
   left: 0;
-  height: 12px;
-  width: 12px;
+  height: 15px;
+  width: 14px;
   background-color: $Grey900;
   outline: 1px solid $Grey200;
+
+  &:hover {
+    outline: 1px solid $Green200;
+  }
 }
 
 .label input:checked ~ .checkmark {
@@ -238,4 +242,10 @@
 
 .label input:checked ~ .checkmark:after {
   display: block;
+}
+
+.checkMark {
+  margin-bottom: 1px;
+  margin-left: 2px;
+  width: 10px;
 }

@@ -206,10 +206,13 @@
   position: absolute;
   top: 0;
   left: 0;
-  height: 12px;
-  width: 12px;
+  height: 15px;
+  width: 14px;
   background-color: #14131b;
   outline: 1px solid #e6e5ea;
+}
+.checkmark:hover {
+  outline: 1px solid #a4ffaf;
 }
 
 .label input:checked ~ .checkmark {
@@ -225,4 +228,10 @@
 
 .label input:checked ~ .checkmark:after {
   display: block;
+}
+
+.checkMark {
+  margin-bottom: 1px;
+  margin-left: 2px;
+  width: 10px;
 }/*# sourceMappingURL=styles.css.map */
