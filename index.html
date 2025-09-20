@@ -26,11 +26,15 @@
         <h1 class="headingName">Password Generator</h1>
         <div class="passwordGen">
           <p class="generatedPassword">P4$5W0rd!</p>
-          <img
-            src="assets/images/icon-copy.svg"
-            alt="copyIcon"
-            class="copyIconImage"
-          />
+          <div class="copyContainer">
+            <p class="copyText">COPIED</p>
+            <img
+              src="assets/images/icon-copy.svg"
+              alt="copyIcon"
+              class="copyIconImage"
+              onclick="copy()"
+            />
+          </div>
         </div>
         <div class="passwordSelectorContainer">
           <div class="cLength">
@@ -42,7 +46,7 @@
               type="range"
               min="0"
               max="10"
-              value="50"
+              value="0"
               class="slider"
               id="myRange"
             />
@@ -51,7 +55,7 @@
             <div class="checkboxes">
               <label class="label"
                 >Include Uppercase Letters
-                <input type="checkbox" id="uppercase" checked="checked" />
+                <input type="checkbox" id="uppercase" />
                 <span class="checkmark"
                   ><img
                     src="assets/images/icon-check.svg"
@@ -99,22 +103,24 @@
             <div class="strength">
               <p class="strengthTitle">STRENGTH</p>
               <div class="levels">
-                <div class="levelsDiv"></div>
-                <div class="levelsDiv"></div>
-                <div class="levelsDiv"></div>
-                <div class="levelsDiv"></div>
+                <div class="name">
+                  <p class="level"></p>
+                </div>
+                <div class="bars">
+                  <div class="levelsDiv" id="level1"></div>
+                  <div class="levelsDiv" id="level2"></div>
+                  <div class="levelsDiv" id="level3"></div>
+                  <div class="levelsDiv" id="level4"></div>
+                </div>
               </div>
             </div>
-            <button class="generateButton">
-              <p class="generateButtonTitle">
-                GENERATE
-                <span
-                  ><img
-                    src="assets/images/icon-arrow-right.svg"
-                    alt="rightArrow"
-                    class="rightArrow"
-                /></span>
-              </p>
+            <button class="generateButton active" onclick="generate()">
+              GENERATE
+              <img
+                src="assets/images/icon-arrow-right.svg"
+                alt="rightArrow"
+                class="rightArrow"
+              />
             </button>
           </div>
         </div>

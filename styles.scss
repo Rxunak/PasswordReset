@@ -42,6 +42,10 @@
 .copyIconImage {
   width: 1rem;
   height: 1.2rem;
+
+  &:hover {
+    cursor: pointer;
+  }
 }
 
 .generatedPassword {
@@ -125,17 +129,6 @@
   margin-bottom: 1rem;
 }
 
-// .input {
-//   outline: 1.5px solid $White;
-//   appearance: none;
-//   width: 12px;
-//   height: 12px;
-// }
-
-// .label {
-//   font-size: 13px;
-// }
-
 .checkboxes {
   display: flex;
   align-items: center;
@@ -162,12 +155,27 @@
 .levels {
   display: flex;
   gap: 10px;
+  justify-content: center;
+  align-items: center;
+  height: auto;
+  width: auto;
+  padding: 10px;
 }
 
 .levelsDiv {
   outline: 1.5px solid $White;
-  width: 5px;
+  width: 6px;
   height: 20px;
+}
+
+.name {
+  height: auto;
+  width: auto;
+}
+
+.bars {
+  display: flex;
+  gap: 10px;
 }
 
 .generateButton {
@@ -175,17 +183,26 @@
   height: 3rem;
   background-color: $Green200;
   border: none;
-}
-
-.generateButtonTitle {
   font-size: 1rem;
   color: $Grey850;
   font-weight: 600;
 }
 
+.generateButton.active:hover {
+  outline: 2px solid $Green200;
+  cursor: pointer;
+  background-color: #24232c;
+  color: $Green200;
+}
+
+.generateButton.active:hover .rightArrow {
+  filter: brightness(0) saturate(100%) invert(95%) sepia(16%) saturate(1094%)
+    hue-rotate(64deg) brightness(100%) contrast(101%);
+}
+
 .rightArrow {
   width: 0.6rem;
-  padding-left: 0.5rem;
+  margin-bottom: 0.1rem;
 }
 
 .strengthTitle {
@@ -197,14 +214,12 @@
   display: block;
   position: relative;
   padding-left: 35px;
-  //   margin-bottom: 12px;
   cursor: pointer;
   font-size: 13px;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  //   outline: 2px solid brown;
 }
 
 .label input {
@@ -248,4 +263,62 @@
   margin-bottom: 1px;
   margin-left: 2px;
   width: 10px;
+}
+
+.copyContainer {
+  display: flex;
+  gap: 12px;
+  font-size: 15px;
+  width: auto;
+}
+
+.copyText {
+  display: none;
+  color: $Green200;
+}
+
+@media (max-width: 425px) {
+  .secondContainer {
+    padding: 1rem;
+  }
+
+  .headingName {
+    font-size: clamp(1rem, 0.0857rem + 4.5714vw, 1.3rem);
+  }
+
+  .generatedPassword {
+    font-size: clamp(1.2rem, 0.5905rem + 3.0476vw, 1.4rem);
+  }
+
+  .label {
+    font-size: clamp(0.7rem, 0.3952rem + 1.5238vw, 0.8rem);
+  }
+
+  .generateButton {
+    font-size: clamp(0.7rem, 0.0905rem + 3.0476vw, 0.9rem);
+  }
+
+  .rightArrow {
+    margin: 0;
+  }
+
+  .passwordGen {
+    padding: 0 1rem 0 1rem;
+  }
+
+  .cLength {
+    padding: 1rem 1rem 0 1rem;
+  }
+
+  .slidecontainer {
+    padding: 0 1rem 0 1rem;
+  }
+
+  .instructions {
+    padding: 0 1rem 0 1rem;
+  }
+
+  .buttons {
+    padding: 0 1rem 0 1rem;
+  }
 }
