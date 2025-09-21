@@ -3,6 +3,8 @@ const passLength = document.getElementById("passwordLength");
 const sliderContainer = document.querySelector(".slidecontainer");
 const levelDiv = document.querySelector(".level");
 
+const generateButton = document.querySelector(".generateButton");
+
 function genPass(length, upperCase, lowercase, numbers, symbols) {
   const lower = "abcdefghijklmnopqrstuvwxyz";
   const upperChars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
@@ -70,11 +72,46 @@ function generate() {
   if (length !== 0 && falsyBox !== true) {
     const passwordGen = genPass(length, upperCase, lowercase, numbers, symbols);
     passwordStrength(length, upperCase, lowercase, numbers, symbols);
+    activateGenerateButton(length, upperCase, lowercase, numbers, symbols);
+    document.querySelector(".generateButton").classList.add("active");
     document.querySelector(".generatedPassword").textContent = passwordGen;
     document.querySelector(".generatedPassword").style.color = "#e6e5ea";
     document.querySelector(".copyText").style.display = "none";
   }
 }
+
+function activateGenerateButton() {
+  const length = parseInt(passLength.innerText);
+  const upperCase = document.getElementById("uppercase").checked;
+  const lowercase = document.getElementById("lowercase").checked;
+  const numbers = document.getElementById("numbers").checked;
+  const symbols = document.getElementById("symbols").checked;
+
+  const checkedBoxes = [upperCase, lowercase, numbers, symbols];
+
+  const falsyBox = checkedBoxes.every((val) => !Boolean(val));
+
+  if (length !== 0 && falsyBox !== true) {
+    document.querySelector(".generateButton").classList.add("active");
+  } else {
+    document.querySelector(".generateButton").classList.remove("active");
+  }
+}
+
+document
+  .getElementById("uppercase")
+  .addEventListener("change", activateGenerateButton);
+document
+  .getElementById("lowercase")
+  .addEventListener("change", activateGenerateButton);
+document
+  .getElementById("numbers")
+  .addEventListener("change", activateGenerateButton);
+document
+  .getElementById("symbols")
+  .addEventListener("change", activateGenerateButton);
+
+generateButton.addEventListener("click", activateGenerateButton);
 
 function copy() {
   const copyText = document.querySelector(".generatedPassword");
@@ -88,6 +125,7 @@ passLength.innerText = slider.value;
 
 slider.oninput = function (event) {
   passLength.innerHTML = this.value;
+  activateGenerateButton();
 };
 
 sliderContainer.addEventListener("mouseover", () => {

@@ -39,7 +39,7 @@
         <div class="passwordSelectorContainer">
           <div class="cLength">
             <p class="cLengthTitle">Character Length</p>
-            <p class="cLengthNumber" id="passwordLength">10</p>
+            <p class="cLengthNumber" id="passwordLength"></p>
           </div>
           <div class="slidecontainer">
             <input
@@ -76,7 +76,7 @@
               ><br />
             </div>
             <div class="checkboxes">
-              <label for="numbers" class="label">
+              <label class="label">
                 Include Numbers
                 <input type="checkbox" id="numbers" name="numbers" />
                 <span class="checkmark"
@@ -87,7 +87,7 @@
               ><br />
             </div>
             <div class="checkboxes">
-              <label for="symbols" class="label">
+              <label class="label">
                 Include Symbols
                 <input type="checkbox" id="symbols" name="symbols" />
                 <span class="checkmark"
@@ -114,7 +114,7 @@
                 </div>
               </div>
             </div>
-            <button class="generateButton active" onclick="generate()">
+            <button type="button" class="generateButton" onclick="generate()">
               GENERATE
               <img
                 src="assets/images/icon-arrow-right.svg"
