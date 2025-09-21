@@ -95,6 +95,10 @@ function activateGenerateButton() {
     document.querySelector(".generateButton").classList.add("active");
   } else {
     document.querySelector(".generateButton").classList.remove("active");
+    document.getElementById("level1").style.backgroundColor = "#18171f";
+    document.getElementById("level2").style.backgroundColor = "#18171f";
+    document.getElementById("level3").style.backgroundColor = "#18171f";
+    document.getElementById("level4").style.backgroundColor = "#18171f";
   }
 }
 
